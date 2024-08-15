@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { ArrowLeftOutlined } from '@ant-design/icons'
 import routes from '../../utils/routes'
 import { useDispatch } from 'react-redux'
-import { cleanComments } from '../../features/comments/commentsSlice'
 
 const ButtonBack = () => {
   const navigate = useNavigate()
@@ -12,7 +11,6 @@ const ButtonBack = () => {
 
   const onClick = useCallback(() => {
     navigate(routes.HOME)
-    dispatch(cleanComments())
   }, [navigate, dispatch])
 
   return (

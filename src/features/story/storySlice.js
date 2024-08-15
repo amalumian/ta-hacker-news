@@ -15,6 +15,11 @@ const storySlice = createSlice({
     isLoading: false,
     isError: false,
   },
+  reducers: {
+    cleanStory: (state) => {
+      state.data = undefined
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchStory.pending, (state) => {
@@ -33,5 +38,6 @@ const storySlice = createSlice({
   },
 })
 
+export const { cleanStory } = storySlice.actions
 export { fetchStory }
 export default storySlice.reducer
