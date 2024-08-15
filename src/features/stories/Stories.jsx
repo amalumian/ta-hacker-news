@@ -85,13 +85,13 @@ const Stories = () => {
             actions={[
               <IconText
                 icon={<RiseOutlined />}
-                text={item?.score?.toString() || ''}
+                text={item?.score?.toString() || '0'}
                 key='list-rating'
               />,
               <IconText icon={<CalendarOutlined />} text={formatDate(item.time)} key='list-date' />,
               <IconText
                 icon={<CommentOutlined />}
-                text={item?.descendants?.toString() || ''}
+                text={item?.descendants?.toString() || '0'}
                 key='list-comments'
               />,
             ]}

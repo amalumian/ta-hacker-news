@@ -8,6 +8,8 @@ import formatDate from '../../utils/formatDate'
 import ErrorMessage from '../../components/ErrorMessage'
 import { COMMENTS_PER_POST } from '../../utils/constants'
 
+const { Title } = Typography
+
 const Comments = () => {
   const dispatch = useDispatch()
   const story = useSelector((state) => state.story.data)
@@ -71,7 +73,11 @@ const Comments = () => {
 
   return story?.kids?.length ? (
     <>
-      <Typography.Title level={2}>Last {COMMENTS_PER_POST} Сomments</Typography.Title>
+      <Title level={2}>
+        Last {story.descendants < COMMENTS_PER_POST ? story.descendants : COMMENTS_PER_POST}{' '}
+        {story.descendants === 1 ? 'Comment' : 'Comments'}
+        {console.log(story.kids)}
+      </Title>
       <Tree
         treeData={treeData}
         onExpand={onExpand}
