@@ -33,9 +33,12 @@ const Stories = () => {
 
   useEffect(() => {
     dispatch(fetchStories({ filterStories, page: 0 }))
+  }, [dispatch, filterStories])
+
+  useEffect(() => {
     dispatch(cleanComments())
     dispatch(cleanStory())
-  }, [dispatch, filterStories])
+  }, [dispatch])
 
   useEffect(() => {
     const interval = setInterval(() => {
