@@ -1,6 +1,6 @@
 import { Tree, Typography } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { fetchComments, fetchChildComments } from './commentsSlice'
 import Loader from '../../components/Loader'
 import { v4 as uuidv4 } from 'uuid'
@@ -51,9 +51,7 @@ const Comments = () => {
     })
   }, [])
 
-  const treeData = useMemo(() => {
-    return formatComments(data ?? [])
-  }, [data, formatComments])
+  const treeData = formatComments(data ?? [])
 
   const onExpand = useCallback(
     (expandedKeys) => {
