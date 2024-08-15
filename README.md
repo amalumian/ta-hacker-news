@@ -39,7 +39,7 @@ npm run dev
   - date;
   - author;
   - comment count;
-  - the last 25 comments in the form of a tree;
+  - the last 25 comments in the form of a tree.
 - Root comments are loaded immediately when you enter the page, subcomments — by clicking on the root comment.
 - The page should have a button to return to the news list.
 
