@@ -11,6 +11,7 @@ const ButtonUpdate = ({ onClick, isLoading, title }) => {
       onClick={onClick}
       size='middle'
       loading={isLoading}
+      disabled={isLoading}
     >
       {title ?? 'Update'}
     </Button>

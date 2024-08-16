@@ -66,7 +66,7 @@ const Stories = () => {
   return (
     <>
       <Flex style={{ marginBottom: '10px' }} align='center' justify='space-between' gap={10}>
-        <Select defaultValue={filterStories} onChange={handleFilterChange}>
+        <Select disabled={isLoading} defaultValue={filterStories} onChange={handleFilterChange}>
           <Select.Option value='new'>New Stories</Select.Option>
           <Select.Option value='top'>Top Stories</Select.Option>
           <Select.Option value='best'>Best Stories</Select.Option>
