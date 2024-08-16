@@ -1,0 +1,24 @@
+.ant-list-items {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.ant-list-item-action {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0 !important;
+}
+
+.ant-list-item-action li {
+  padding: 0 10px 0 10px !important;
+}
+
+.ant-list-item-action li:first-child {
+  padding-left: 0 !important;
+}
+
+@media (max-width: 450px) {
+  .ant-list-item-action li:first-child {
+    padding-left: 10px !important;
+  }
+}

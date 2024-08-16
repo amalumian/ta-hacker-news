@@ -14,6 +14,7 @@ import { useStorageState } from '../../hooks/useStorageState'
 import ErrorMessage from '../../components/ErrorMessage'
 import { cleanComments } from '../../features/comments/commentsSlice'
 import { cleanStory } from '../../features/story/storySlice'
+import './Stories.css'
 
 const Stories = () => {
   const dispatch = useDispatch()
@@ -102,7 +103,6 @@ const Stories = () => {
             />
           </List.Item>
         )}
-        style={{ background: '#ffffff', borderRadius: '8px' }}
       />
       {isLoading && data.length > 0 && <Loader size='large' />}
     </>
