@@ -12,7 +12,7 @@ import formatDate from '../../utils/formatDate'
 import { STORIES_PER_PAGE, DEBOUNCE_WAIT_TIME, FETCH_INTERVAL } from '../../utils/constants'
 import { useStorageState } from '../../hooks/useStorageState'
 import ErrorMessage from '../../components/ErrorMessage'
-import { cleanStory } from '../../features/story/storySlice'
+import { storyCleaned } from '../../features/story/storySlice'
 import './Stories.css'
 
 const Stories = () => {
@@ -36,7 +36,7 @@ const Stories = () => {
   }, [dispatch, filterStories])
 
   useEffect(() => {
-    dispatch(cleanStory())
+    dispatch(storyCleaned())
   }, [dispatch])
 
   useEffect(() => {

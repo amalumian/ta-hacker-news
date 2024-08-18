@@ -16,7 +16,7 @@ const storySlice = createSlice({
     isError: false,
   },
   reducers: {
-    cleanStory: (state) => {
+    storyCleaned: (state) => {
       state.data = undefined
     },
   },
@@ -38,6 +38,6 @@ const storySlice = createSlice({
   },
 })
 
-export const { cleanStory } = storySlice.actions
+export const { storyCleaned } = storySlice.actions
 export { fetchStory }
 export default storySlice.reducer
