@@ -74,7 +74,7 @@ const Comments = () => {
   return story?.kids?.length ? (
     <>
       <Title level={2}>
-        Last {story.descendants < COMMENTS_PER_POST ? story.descendants : COMMENTS_PER_POST}{' '}
+        {story.descendants < COMMENTS_PER_POST ? story.descendants : `Last ${COMMENTS_PER_POST}`}{' '}
         {story.descendants === 1 ? 'Comment' : 'Comments'}
       </Title>
       <Tree
