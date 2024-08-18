@@ -54,7 +54,8 @@ npm run dev
 
 ### Additional libraries
 
-- axios
-- lodash (.\_debounce())
-- p-limit (Run multiple promise-returning & async functions with limited concurrency )
-- uuid (v4)
+- The following libraries are used:
+  - axios;
+  - lodash (.\_debounce());
+  - p-limit (Run multiple promise-returning & async functions with limited concurrency );
+  - uuid (v4).
