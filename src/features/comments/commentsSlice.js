@@ -68,9 +68,12 @@ const commentsSlice = createSlice({
         state.isChildError = true
       })
   },
+  selectors: {
+    selectComments: (commentsState) => commentsState,
+  },
 })
 
-export const selectComments = (state) => state.comments
-export const { cleanComments } = commentsSlice.actions
 export { fetchComments, fetchChildComments }
+export const { selectComments } = commentsSlice.selectors
+export const { cleanComments } = commentsSlice.actions
 export default commentsSlice.reducer

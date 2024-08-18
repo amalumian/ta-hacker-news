@@ -69,8 +69,11 @@ const storiesSlice = createSlice({
         state.isError = true
       })
   },
+  selectors: {
+    selectStories: (storiesState) => storiesState,
+  },
 })
 
-export const selectStories = (state) => state.stories
 export { fetchStories }
+export const { selectStories } = storiesSlice.selectors
 export default storiesSlice.reducer
