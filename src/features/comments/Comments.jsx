@@ -1,9 +1,10 @@
 import { Tree, Typography } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { useCallback, useEffect, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+
 import { fetchComments, fetchChildComments, selectComments } from './commentsSlice'
 import Loader from '../../components/Loader'
-import { v4 as uuidv4 } from 'uuid'
 import formatDate from '../../utils/formatDate'
 import ErrorMessage from '../../components/ErrorMessage'
 import { COMMENTS_PER_POST } from '../../utils/constants'

@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchStory, selectStory } from './storySlice'
 import { Card, Skeleton } from 'antd'
-import formatDate from '../../utils/formatDate'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
+
 import ErrorMessage from '../../components/ErrorMessage'
+import formatDate from '../../utils/formatDate'
+import { fetchStory, selectStory } from './storySlice'
 
 const Story = () => {
   const dispatch = useDispatch()

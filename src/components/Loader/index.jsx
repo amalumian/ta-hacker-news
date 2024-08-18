@@ -1,6 +1,7 @@
 import { Spin, Flex } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 import PropTypes from 'prop-types'
+
 import './index.css'
 
 const Loader = ({ size }) => {

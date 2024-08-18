@@ -1,7 +1,8 @@
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import News from '../../assets/news.svg?react'
 import { Layout as AntLayout, Menu, Typography } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
+
+import News from '../../assets/news.svg?react'
 
 const { Header, Content, Footer } = AntLayout
 const { Link: AntLink } = Typography

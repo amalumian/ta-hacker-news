@@ -1,9 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import pLimit from 'p-limit'
+import { createSlice } from '@reduxjs/toolkit'
+
 import API from '../../utils/api'
 import { PLIMIT_COUNT, STORIES_PER_PAGE } from '../../utils/constants'
-import { createSlice } from '@reduxjs/toolkit'
 
 const limit = pLimit(PLIMIT_COUNT)
 

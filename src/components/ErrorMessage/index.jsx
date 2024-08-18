@@ -1,6 +1,7 @@
 import { Alert } from 'antd'
-import './index.css'
 import PropTypes from 'prop-types'
+
+import './index.css'
 
 const ErrorMessage = ({ message }) => {
   return <Alert className='error-message' message={message} type='error' />

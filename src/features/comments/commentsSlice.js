@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 import pLimit from 'p-limit'
+
 import API from '../../utils/api'
 import updateTreeData from '../../utils/updateTreeData'
 import { COMMENTS_PER_POST, PLIMIT_COUNT } from '../../utils/constants'
