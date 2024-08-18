@@ -12,7 +12,6 @@ import formatDate from '../../utils/formatDate'
 import { STORIES_PER_PAGE, DEBOUNCE_WAIT_TIME, FETCH_INTERVAL } from '../../utils/constants'
 import { useStorageState } from '../../hooks/useStorageState'
 import ErrorMessage from '../../components/ErrorMessage'
-import { cleanComments } from '../../features/comments/commentsSlice'
 import { cleanStory } from '../../features/story/storySlice'
 import './Stories.css'
 
@@ -37,7 +36,6 @@ const Stories = () => {
   }, [dispatch, filterStories])
 
   useEffect(() => {
-    dispatch(cleanComments())
     dispatch(cleanStory())
   }, [dispatch])
 

@@ -33,11 +33,6 @@ const commentsSlice = createSlice({
     isChildLoading: false,
     isChildError: false,
   },
-  reducers: {
-    cleanComments: (state) => {
-      state.data = []
-    },
-  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchComments.pending, (state) => {
