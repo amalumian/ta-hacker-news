@@ -70,5 +70,6 @@ const storiesSlice = createSlice({
   },
 })
 
+export const selectStories = (state) => state.stories
 export { fetchStories }
 export default storiesSlice.reducer

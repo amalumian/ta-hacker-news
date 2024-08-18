@@ -7,7 +7,7 @@ import { debounce } from 'lodash'
 import IconText from '../../components/IconText'
 import ButtonUpdate from '../../components/ButtonUpdate'
 import Loader from '../../components/Loader'
-import { fetchStories } from './storiesSlice'
+import { fetchStories, selectStories } from './storiesSlice'
 import formatDate from '../../utils/formatDate'
 import { STORIES_PER_PAGE, DEBOUNCE_WAIT_TIME, FETCH_INTERVAL } from '../../utils/constants'
 import { useStorageState } from '../../hooks/useStorageState'
@@ -17,7 +17,7 @@ import './Stories.css'
 
 const Stories = () => {
   const dispatch = useDispatch()
-  const { data, isLoading, isError, hasMore } = useSelector((state) => state.stories)
+  const { data, isLoading, isError, hasMore } = useSelector(selectStories)
   const [filterStories, setFilterStories] = useStorageState('filterStories', 'new')
 
   const handleFilterChange = (value) => {

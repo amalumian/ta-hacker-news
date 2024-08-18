@@ -38,6 +38,8 @@ const storySlice = createSlice({
   },
 })
 
+export const selectStory = (state) => state.story
+export const selectStoryData = (state) => state.story.data
 export const { storyCleaned } = storySlice.actions
 export { fetchStory }
 export default storySlice.reducer

@@ -1,19 +1,20 @@
 import { Tree, Typography } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { useCallback, useEffect, useState } from 'react'
-import { fetchComments, fetchChildComments } from './commentsSlice'
+import { fetchComments, fetchChildComments, selectComments } from './commentsSlice'
 import Loader from '../../components/Loader'
 import { v4 as uuidv4 } from 'uuid'
 import formatDate from '../../utils/formatDate'
 import ErrorMessage from '../../components/ErrorMessage'
 import { COMMENTS_PER_POST } from '../../utils/constants'
+import { selectStoryData } from '../story/storySlice'
 
 const { Title } = Typography
 
 const Comments = () => {
   const dispatch = useDispatch()
-  const story = useSelector((state) => state.story.data)
-  const { data, isLoading, isError } = useSelector((state) => state.comments)
+  const story = useSelector(selectStoryData)
+  const { data, isLoading, isError } = useSelector(selectComments)
   const [selectedKeys, setSelectedKeys] = useState([])
 
   useEffect(() => {

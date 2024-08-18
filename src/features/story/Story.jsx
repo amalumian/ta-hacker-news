@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchStory } from './storySlice'
+import { fetchStory, selectStory } from './storySlice'
 import { Card, Skeleton } from 'antd'
 import formatDate from '../../utils/formatDate'
 import { Link } from 'react-router-dom'
@@ -9,7 +9,7 @@ import ErrorMessage from '../../components/ErrorMessage'
 
 const Story = () => {
   const dispatch = useDispatch()
-  const { data, isLoading, isError } = useSelector((state) => state.story)
+  const { data, isLoading, isError } = useSelector(selectStory)
   const { id } = useParams()
 
   useEffect(() => {

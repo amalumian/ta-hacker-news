@@ -69,6 +69,7 @@ const commentsSlice = createSlice({
   },
 })
 
+export const selectComments = (state) => state.comments
 export const { cleanComments } = commentsSlice.actions
 export { fetchComments, fetchChildComments }
 export default commentsSlice.reducer
