@@ -13,7 +13,6 @@ import formatDate from '../../utils/formatDate'
 import { STORIES_PER_PAGE, DEBOUNCE_WAIT_TIME, FETCH_INTERVAL } from '../../utils/constants'
 import { useStorageState } from '../../hooks/useStorageState'
 import ErrorMessage from '../../components/ErrorMessage'
-import { storyCleaned } from '../../features/story/storySlice'
 import './Stories.css'
 
 const Stories = () => {
@@ -35,10 +34,6 @@ const Stories = () => {
   useEffect(() => {
     dispatch(fetchStories({ filterStories, page: 0 }))
   }, [dispatch, filterStories])
-
-  useEffect(() => {
-    dispatch(storyCleaned())
-  }, [dispatch])
 
   useEffect(() => {
     const interval = setInterval(() => {

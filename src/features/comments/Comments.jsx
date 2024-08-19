@@ -2,6 +2,7 @@ import { Tree, Typography } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { useCallback, useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { useParams } from 'react-router-dom'
 
 import { fetchComments, fetchChildComments, selectComments } from './commentsSlice'
 import Loader from '../../components/Loader'
@@ -17,12 +18,14 @@ const Comments = () => {
   const story = useSelector(selectStoryData)
   const { data, isLoading, isError } = useSelector(selectComments)
   const [selectedKeys, setSelectedKeys] = useState([])
+  const { id } = useParams()
+  const isStoryLoaded = story?.id.toString() === id
 
   useEffect(() => {
-    if (story && story.kids) {
+    if (story && story.kids && isStoryLoaded) {
       dispatch(fetchComments(story.kids))
     }
-  }, [story, dispatch])
+  }, [story, dispatch, isStoryLoaded])
 
   const formatComments = useCallback((comments) => {
     const getChildren = (kids, children) => {
@@ -73,7 +76,7 @@ const Comments = () => {
     return <ErrorMessage message='Error loading comments.' />
   }
 
-  return story?.kids?.length ? (
+  return isStoryLoaded && story?.kids?.length ? (
     <>
       <Title level={2}>
         {story.descendants < COMMENTS_PER_POST ? story.descendants : `Last ${COMMENTS_PER_POST}`}{' '}
