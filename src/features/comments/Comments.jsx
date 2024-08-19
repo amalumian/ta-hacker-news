@@ -16,7 +16,7 @@ const { Title } = Typography
 const Comments = () => {
   const dispatch = useDispatch()
   const story = useSelector(selectStoryData)
-  const { data, isLoading, isError } = useSelector(selectComments)
+  const { data, isLoading, isError, error } = useSelector(selectComments)
   const [selectedKeys, setSelectedKeys] = useState([])
   const { id } = useParams()
   const isStoryLoaded = story?.id.toString() === id
@@ -73,7 +73,7 @@ const Comments = () => {
   }
 
   if (isError) {
-    return <ErrorMessage message='Error loading comments.' />
+    return <ErrorMessage message={error} />
   }
 
   return isStoryLoaded && story?.kids?.length ? (

@@ -38,6 +38,7 @@ const storiesSlice = createSlice({
     data: [],
     isLoading: false,
     isError: false,
+    error: null,
     page: 0,
     hasMore: true,
   },
@@ -64,9 +65,10 @@ const storiesSlice = createSlice({
 
         state.page = currentPage
       })
-      .addCase(fetchStories.rejected, (state) => {
+      .addCase(fetchStories.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
+        state.error = action.error.message ?? 'Error loading stories'
       })
   },
   selectors: {

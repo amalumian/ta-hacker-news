@@ -17,7 +17,7 @@ import './Stories.css'
 
 const Stories = () => {
   const dispatch = useDispatch()
-  const { data, isLoading, isError, hasMore } = useSelector(selectStories)
+  const { data, isLoading, isError, error, hasMore } = useSelector(selectStories)
   const [filterStories, setFilterStories] = useStorageState('filterStories', 'new')
 
   const handleFilterChange = (value) => {
@@ -69,7 +69,7 @@ const Stories = () => {
         </Select>
         <ButtonUpdate onClick={handleUpdateStories} isLoading={isLoading} title='Update' />
       </Flex>
-      {isError && <ErrorMessage message='Error loading stories.' />}
+      {isError && <ErrorMessage message={error} />}
       <List
         itemLayout='vertical'
         loading={isLoading}

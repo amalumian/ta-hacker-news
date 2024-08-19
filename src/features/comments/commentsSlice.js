@@ -31,8 +31,10 @@ const commentsSlice = createSlice({
     data: [],
     isLoading: false,
     isError: false,
+    error: null,
     isChildLoading: false,
     isChildError: false,
+    childError: null,
   },
   extraReducers: (builder) => {
     builder
@@ -45,9 +47,10 @@ const commentsSlice = createSlice({
         state.isError = false
         state.data = action.payload
       })
-      .addCase(fetchComments.rejected, (state) => {
+      .addCase(fetchComments.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
+        state.error = action.error.message ?? 'Error loading comments'
       })
       .addCase(fetchChildComments.pending, (state) => {
         state.isChildLoading = true
@@ -63,9 +66,10 @@ const commentsSlice = createSlice({
         state.isChildLoading = false
         state.isChildError = false
       })
-      .addCase(fetchChildComments.rejected, (state) => {
+      .addCase(fetchChildComments.rejected, (state, action) => {
         state.isChildLoading = false
         state.isChildError = true
+        state.childError = action.error.message ?? 'Error loading nested comments'
       })
   },
   selectors: {

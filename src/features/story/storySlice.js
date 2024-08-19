@@ -15,6 +15,7 @@ const storySlice = createSlice({
     data: undefined,
     isLoading: false,
     isError: false,
+    error: null,
   },
   extraReducers: (builder) => {
     builder
@@ -27,9 +28,10 @@ const storySlice = createSlice({
         state.isError = false
         state.data = action.payload
       })
-      .addCase(fetchStory.rejected, (state) => {
+      .addCase(fetchStory.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
+        state.error = action.error.message ?? 'Error loading story'
       })
   },
   selectors: {

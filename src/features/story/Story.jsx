@@ -10,7 +10,7 @@ import { fetchStory, selectStory } from './storySlice'
 
 const Story = () => {
   const dispatch = useDispatch()
-  const { data, isLoading, isError } = useSelector(selectStory)
+  const { data, isLoading, isError, error } = useSelector(selectStory)
   const { id } = useParams()
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Story = () => {
   }
 
   if (isError) {
-    return <ErrorMessage message='Error loading story.' />
+    return <ErrorMessage message={error} />
   }
 
   return (
