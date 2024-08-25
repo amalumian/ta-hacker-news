@@ -1,6 +1,6 @@
 import { Typography } from 'antd'
 
-import Stories from '../../features/stories/Stories'
+import Stories from '@/features/stories/Stories'
 
 const { Title } = Typography
 

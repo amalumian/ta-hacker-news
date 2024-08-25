@@ -1,6 +1,6 @@
 import { Typography } from 'antd'
 
-import ErrorMessage from '../../components/ErrorMessage'
+import ErrorMessage from '@/common/components/ErrorMessage'
 
 const { Title } = Typography
 

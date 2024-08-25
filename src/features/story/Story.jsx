@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 
-import ErrorMessage from '../../components/ErrorMessage'
-import formatDate from '../../utils/formatDate'
+import ErrorMessage from '@/common/components/ErrorMessage'
+import formatDate from '@/common/utils/formatDate'
 import { fetchStory, selectStory } from './storySlice'
 
 const Story = () => {

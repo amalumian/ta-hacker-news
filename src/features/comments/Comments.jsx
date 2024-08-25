@@ -5,10 +5,10 @@ import { v4 as uuidv4 } from 'uuid'
 import { useParams } from 'react-router-dom'
 
 import { fetchComments, fetchChildComments, selectComments } from './commentsSlice'
-import Loader from '../../components/Loader'
-import formatDate from '../../utils/formatDate'
-import ErrorMessage from '../../components/ErrorMessage'
-import { COMMENTS_PER_POST } from '../../utils/constants'
+import Loader from '@/common/components/Loader'
+import formatDate from '@/common/utils/formatDate'
+import ErrorMessage from '@/common/components/ErrorMessage'
+import { COMMENTS_PER_POST } from '@/common/utils/constants'
 import { selectStoryData } from '../story/storySlice'
 
 const { Title } = Typography

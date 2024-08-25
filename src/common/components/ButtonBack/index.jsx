@@ -3,7 +3,7 @@ import { Button } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeftOutlined } from '@ant-design/icons'
 
-import routes from '../../utils/routes'
+import routes from '@/common/utils/routes'
 
 const ButtonBack = () => {
   const navigate = useNavigate()

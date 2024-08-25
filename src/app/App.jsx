@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 
-import Layout from './pages/Layout'
-import HomePage from './pages/HomePage'
-import StoryPage from './pages/StoryPage'
-import NotFound from './pages/NotFound'
-import routes from './utils/routes'
+import Layout from '../pages/Layout'
+import HomePage from '../pages/HomePage'
+import StoryPage from '../pages/StoryPage'
+import NotFound from '../pages/NotFound'
+import routes from '../common/utils/routes'
 
 function App() {
   return (

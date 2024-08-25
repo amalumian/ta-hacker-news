@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-import API from '../../utils/api'
+import API from '@/common/utils/api'
 
 const fetchStory = createAsyncThunk('story/fetchStory', async (id) => {
   const { data: story } = await axios.get(API.ITEM(id))

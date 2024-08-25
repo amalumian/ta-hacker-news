@@ -3,8 +3,8 @@ import axios from 'axios'
 import pLimit from 'p-limit'
 import { createSlice } from '@reduxjs/toolkit'
 
-import API from '../../utils/api'
-import { PLIMIT_COUNT, STORIES_PER_PAGE } from '../../utils/constants'
+import API from '@/common/utils/api'
+import { PLIMIT_COUNT, STORIES_PER_PAGE } from '@/common/utils/constants'
 
 const limit = pLimit(PLIMIT_COUNT)
 
