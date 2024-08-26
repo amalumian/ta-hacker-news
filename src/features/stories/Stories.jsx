@@ -24,13 +24,13 @@ const Stories = () => {
     setFilterStories(value)
   }
 
-  const handleUpdateStories = useCallback(() => {
-    const debouncedFetch = debounce(() => {
-      dispatch(fetchStories({ filterStories, page: 0 }))
-    }, DEBOUNCE_WAIT_TIME)
+  const debouncedFetch = debounce((dispatch, filterStories) => {
+    dispatch(fetchStories({ filterStories, page: 0 }))
+  }, DEBOUNCE_WAIT_TIME)
 
-    debouncedFetch()
-  }, [dispatch, filterStories])
+  const handleUpdateStories = useCallback(() => {
+    debouncedFetch(dispatch, filterStories)
+  }, [dispatch, filterStories, debouncedFetch])
 
   useEffect(() => {
     dispatch(fetchStories({ filterStories, page: 0 }))
