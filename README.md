@@ -47,7 +47,7 @@ npm run dev
 
 - React
 - React Router
-- Redux Toolkit
+- Redux Toolkit + React-Redux
 - Ant Design
 - Vitest + React Testing Library
 - Vite
