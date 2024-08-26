@@ -21,7 +21,7 @@ const ButtonUpdate = ({ onClick, isLoading, title }) => {
 ButtonUpdate.propTypes = {
   onClick: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 }
 
 export default ButtonUpdate
