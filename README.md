@@ -53,7 +53,7 @@ npm run dev
 - Vite
 - npm
 - CI
-- The official [Hacker News API](https://github.com/HackerNews/API)
+- [Hacker News API](https://github.com/HackerNews/API)
 
 ### Additional libraries
 
