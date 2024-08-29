@@ -52,7 +52,6 @@ npm run dev
 - Vitest + React Testing Library
 - Vite
 - npm
-- CI
 - [Hacker News API](https://github.com/HackerNews/API)
 
 ### Additional libraries
