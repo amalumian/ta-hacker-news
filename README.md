@@ -58,5 +58,5 @@ npm run dev
 
 - axios
 - lodash (.\_debounce())
-- p-limit (Run multiple promise-returning & async functions with limited concurrency )
+- p-limit (Run multiple promise-returning & async functions with limited concurrency)
 - uuid (v4)
