@@ -19,7 +19,7 @@ const Story = () => {
 
   if (isLoading) {
     return (
-      <Card>
+      <Card data-testid='skeleton-loading'>
         <Skeleton active title={false} paragraph={{ rows: 3 }} />
       </Card>
     )
