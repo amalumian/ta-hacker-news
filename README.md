@@ -49,7 +49,7 @@ npm run dev
 - React Router
 - Redux Toolkit + React-Redux
 - Ant Design
-- Vitest + React Testing Library
+- Vitest + React Testing Library + Mock Service Worker
 - Vite
 - npm
 - [Hacker News API](https://github.com/HackerNews/API)
