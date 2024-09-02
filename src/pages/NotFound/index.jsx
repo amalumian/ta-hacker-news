@@ -8,7 +8,7 @@ const NotFound = () => {
   return (
     <>
       <Title level={1}>404</Title>
-      <ErrorMessage message='Page not found.' />
+      <ErrorMessage message='Page not found' />
     </>
   )
 }
