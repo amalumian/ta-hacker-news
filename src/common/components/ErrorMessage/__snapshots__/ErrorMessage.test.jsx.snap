@@ -2,7 +2,7 @@
 
 exports[`ErrorMessage Component > matches snapshot 1`] = `
 <div
-  class="ant-alert ant-alert-error ant-alert-no-icon error-message css-dev-only-do-not-override-d2lrxs"
+  class="ant-alert ant-alert-error ant-alert-no-icon error-message css-dev-only-do-not-override-vn1oyg"
   data-show="true"
   role="alert"
 >
