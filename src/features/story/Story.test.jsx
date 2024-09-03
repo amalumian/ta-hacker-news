@@ -4,7 +4,7 @@ import { http, HttpResponse } from 'msw'
 import { setupServer } from 'msw/node'
 
 import Story from './Story'
-import { renderWithRouterProviders } from '../../common/utils/test-utils'
+import { renderWithRouterProvider } from '../../common/utils/test-utils'
 
 const handlers = [
   http.get('https://hacker-news.firebaseio.com/v0/item/:id.json', ({ params }) => {
@@ -35,7 +35,7 @@ afterAll(() => server.close())
 
 describe('Story Feature', () => {
   it('renders loading state initially', () => {
-    renderWithRouterProviders(<Story />, { id: '123' })
+    renderWithRouterProvider(<Story />, { id: '123' })
     expect(screen.getByTestId('skeleton-loading')).toBeInTheDocument()
   })
 
@@ -46,7 +46,7 @@ describe('Story Feature', () => {
       }),
     )
 
-    renderWithRouterProviders(<Story />, { id: '123' })
+    renderWithRouterProvider(<Story />, { id: '123' })
 
     await waitFor(() => {
       expect(screen.getByText(/Request failed with status code 500/i)).toBeInTheDocument()
@@ -54,7 +54,7 @@ describe('Story Feature', () => {
   })
 
   it('renders story data on successful fetch', async () => {
-    renderWithRouterProviders(<Story />, { id: '123' })
+    renderWithRouterProvider(<Story />, { id: '123' })
 
     await waitFor(() => {
       expect(screen.getByText('Test Story')).toBeInTheDocument()

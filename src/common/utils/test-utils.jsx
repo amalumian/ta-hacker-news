@@ -4,7 +4,7 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom'
 
 import store from '@/app/store'
 
-export function renderWithProviders(ui) {
+export function renderWithProvider(ui) {
   const Wrapper = ({ children }) => <Provider store={store}>{children}</Provider>
 
   return {
@@ -13,7 +13,7 @@ export function renderWithProviders(ui) {
   }
 }
 
-export function renderWithRouterProviders(ui, { id } = {}) {
+export function renderWithRouterProvider(ui, { id } = {}) {
   const Wrapper = ({ children }) => (
     <Provider store={store}>
       <MemoryRouter initialEntries={[`/story/${id}`]}>
