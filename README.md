@@ -52,6 +52,7 @@ npm run dev
 - Vitest + React Testing Library + Mock Service Worker
 - Vite
 - npm
+- Netlify
 - [Hacker News API](https://github.com/HackerNews/API)
 
 ### Additional libraries
