@@ -60,6 +60,9 @@ describe('Story Feature', () => {
       expect(screen.getByText('Test Story')).toBeInTheDocument()
       expect(screen.getByText('Author: Test Author')).toBeInTheDocument()
       expect(screen.getByText('Comments: 42')).toBeInTheDocument()
+
+      expect(screen.queryByText(/Request failed with status code 500/i)).not.toBeInTheDocument()
+      expect(screen.queryByText('skeleton-loading')).not.toBeInTheDocument()
     })
   })
 })
