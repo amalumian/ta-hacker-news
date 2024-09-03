@@ -29,20 +29,20 @@ const Story = () => {
     return <ErrorMessage message={error} />
   }
 
-  return (
-    data && (
-      <Card title={data?.title}>
-        <div>
-          Link:{' '}
-          <Link to={data?.url || ''} target='_blank'>
-            {data?.url}
-          </Link>
-        </div>
-        <div className='by'>Author: {data?.by}</div>
-        <div>Date: {formatDate(data?.time || 0)}</div>
-        <div>{data?.descendants ? `Comments: ${data?.descendants}` : null}</div>
-      </Card>
-    )
+  return data ? (
+    <Card title={data?.title}>
+      <div>
+        Link:{' '}
+        <Link to={data?.url || ''} target='_blank'>
+          {data?.url}
+        </Link>
+      </div>
+      <div className='by'>Author: {data?.by}</div>
+      <div>Date: {formatDate(data?.time || 0)}</div>
+      <div>{data?.descendants ? `Comments: ${data?.descendants}` : null}</div>
+    </Card>
+  ) : (
+    <ErrorMessage message='Story not found' />
   )
 }
 
