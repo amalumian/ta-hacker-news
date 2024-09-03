@@ -35,7 +35,7 @@ afterAll(() => server.close())
 
 describe('Story Feature', () => {
   it('renders loading state initially', () => {
-    renderWithRouterProvider(<Story />, { id: '123' })
+    renderWithRouterProvider(<Story />, { initialRoute: '/story/123' })
     expect(screen.getByTestId('skeleton-loading')).toBeInTheDocument()
   })
 
@@ -46,7 +46,7 @@ describe('Story Feature', () => {
       }),
     )
 
-    renderWithRouterProvider(<Story />, { id: '123' })
+    renderWithRouterProvider(<Story />, { initialRoute: '/story/123' })
 
     await waitFor(() => {
       expect(screen.getByText(/Request failed with status code 500/i)).toBeInTheDocument()
@@ -54,7 +54,7 @@ describe('Story Feature', () => {
   })
 
   it('renders story data on successful fetch', async () => {
-    renderWithRouterProvider(<Story />, { id: '123' })
+    renderWithRouterProvider(<Story />, { initialRoute: '/story/123' })
 
     await waitFor(() => {
       expect(screen.getByText('Test Story')).toBeInTheDocument()
