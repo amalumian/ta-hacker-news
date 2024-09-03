@@ -1,7 +1,11 @@
 import { render, screen, within } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 
 import NotFound from './index'
+
+vi.mock('react-router-dom', () => ({
+  useNavigate: vi.fn(),
+}))
 
 describe('NotFound Page', () => {
   it('renders heading with the text "404"', () => {
