@@ -3,6 +3,10 @@ import { Provider } from 'react-redux'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 
 import store from '@/app/store'
+import HomePage from '@/pages/HomePage'
+import StoryPage from '@/pages/StoryPage'
+import NotFound from '@/pages/NotFound'
+import routes from './routes'
 
 export function renderWithProvider(ui) {
   const Wrapper = ({ children }) => <Provider store={store}>{children}</Provider>
@@ -13,12 +17,14 @@ export function renderWithProvider(ui) {
   }
 }
 
-export function renderWithRouterProvider(ui, { id } = {}) {
-  const Wrapper = ({ children }) => (
+export function renderWithRouterProvider(ui, { initialRoute } = {}) {
+  const Wrapper = () => (
     <Provider store={store}>
-      <MemoryRouter initialEntries={[`/story/${id}`]}>
+      <MemoryRouter initialEntries={[initialRoute]}>
         <Routes>
-          <Route path='/story/:id' element={children} />
+          <Route index element={<HomePage />} />
+          <Route path={routes.STORY} element={<StoryPage />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </MemoryRouter>
     </Provider>
