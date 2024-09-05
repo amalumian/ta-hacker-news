@@ -26,7 +26,7 @@ describe('ButtonBack Component', () => {
 
     render(<ButtonBack />)
 
-    const buttonElement = screen.getByRole('button')
+    const buttonElement = screen.getByRole('button', { name: /back to news/i })
     fireEvent.click(buttonElement)
 
     expect(mockedNavigate).toHaveBeenCalledWith(routes.HOME)

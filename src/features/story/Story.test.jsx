@@ -1,5 +1,5 @@
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest'
-import { screen, waitFor } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { http, HttpResponse } from 'msw'
 import { setupServer } from 'msw/node'
 
@@ -48,21 +48,17 @@ describe('Story Feature', () => {
 
     renderWithRouterProvider(<Story />, { initialRoute: '/story/123' })
 
-    await waitFor(() => {
-      expect(screen.getByText(/Request failed with status code 500/i)).toBeInTheDocument()
-    })
+    expect(await screen.findByText(/Request failed with status code 500/i)).toBeInTheDocument()
   })
 
   it('renders story data on successful fetch', async () => {
     renderWithRouterProvider(<Story />, { initialRoute: '/story/123' })
 
-    await waitFor(() => {
-      expect(screen.getByText('Test Story')).toBeInTheDocument()
-      expect(screen.getByText('Author: Test Author')).toBeInTheDocument()
-      expect(screen.getByText('Comments: 42')).toBeInTheDocument()
+    expect(await screen.findByText('Test Story')).toBeInTheDocument()
+    expect(await screen.findByText('Author: Test Author')).toBeInTheDocument()
+    expect(await screen.findByText('Comments: 42')).toBeInTheDocument()
 
-      expect(screen.queryByText(/Request failed with status code 500/i)).not.toBeInTheDocument()
-      expect(screen.queryByText('skeleton-loading')).not.toBeInTheDocument()
-    })
+    expect(screen.queryByText(/Request failed with status code 500/i)).not.toBeInTheDocument()
+    expect(screen.queryByText('skeleton-loading')).not.toBeInTheDocument()
   })
 })

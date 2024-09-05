@@ -15,7 +15,7 @@ describe('ErrorMessage Component', () => {
   })
 
   test('matches snapshot', () => {
-    const { container } = render(<ErrorMessage message='Snapshot test' />)
-    expect(container.firstChild).toMatchSnapshot()
+    const { asFragment } = render(<ErrorMessage message='Snapshot test' />)
+    expect(asFragment()).toMatchSnapshot()
   })
 })
