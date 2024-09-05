@@ -1,6 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/062ec3d4-f133-44c9-b8ea-86c27a8f1110/deploy-status)](https://app.netlify.com/sites/ta-hacker-news/deploys)
-
-[![test](https://github.com/amalumian/ta-hacker-news/actions/workflows/test.yml/badge.svg)](https://github.com/amalumian/ta-hacker-news/actions/workflows/test.yml)
+[![test](https://github.com/amalumian/ta-hacker-news/actions/workflows/test.yml/badge.svg)](https://github.com/amalumian/ta-hacker-news/actions/workflows/test.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/062ec3d4-f133-44c9-b8ea-86c27a8f1110/deploy-status)](https://app.netlify.com/sites/ta-hacker-news/deploys)
 
 # Hacker News
 
