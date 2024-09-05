@@ -1,19 +1,21 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ErrorMessage Component > matches snapshot 1`] = `
-<div
-  class="ant-alert ant-alert-error ant-alert-no-icon error-message css-dev-only-do-not-override-vn1oyg"
-  data-show="true"
-  role="alert"
->
+<DocumentFragment>
   <div
-    class="ant-alert-content"
+    class="ant-alert ant-alert-error ant-alert-no-icon error-message css-dev-only-do-not-override-vn1oyg"
+    data-show="true"
+    role="alert"
   >
     <div
-      class="ant-alert-message"
+      class="ant-alert-content"
     >
-      Snapshot test
+      <div
+        class="ant-alert-message"
+      >
+        Snapshot test
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
