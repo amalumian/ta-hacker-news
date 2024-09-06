@@ -1,6 +1,6 @@
-[![test](https://github.com/amalumian/ta-hacker-news/actions/workflows/test.yml/badge.svg)](https://github.com/amalumian/ta-hacker-news/actions/workflows/test.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/062ec3d4-f133-44c9-b8ea-86c27a8f1110/deploy-status)](https://app.netlify.com/sites/ta-hacker-news/deploys)
-
 # Hacker News
+
+[![test](https://github.com/amalumian/ta-hacker-news/actions/workflows/test.yml/badge.svg)](https://github.com/amalumian/ta-hacker-news/actions/workflows/test.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/062ec3d4-f133-44c9-b8ea-86c27a8f1110/deploy-status)](https://app.netlify.com/sites/ta-hacker-news/deploys)
 
 The test assignment is an interface for the [Hacker News](https://news.ycombinator.com/news) website, consisting of two pages.
 
